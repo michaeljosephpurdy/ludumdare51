@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://cosi8pbpng65a"]
+
+[ext_resource type="Script" path="res://InputContainer.gd" id="1_kmoxg"]
+[ext_resource type="Script" path="res://10KeyContainer.gd" id="2_uamkw"]
+[ext_resource type="Script" path="res://CellKeyContainer.gd" id="3_c0hs3"]
+
+[node name="Node2d" type="Node2D"]
+
+[node name="InputContainer" type="Container" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kmoxg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InputContainer"]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Clear" type="Button" parent="InputContainer/HBoxContainer"]
+layout_mode = 2
+offset_right = 57.0
+offset_bottom = 40.0
+text = "CLEAR"
+
+[node name="10KeyContainer" type="GridContainer" parent="InputContainer/HBoxContainer"]
+layout_mode = 2
+offset_left = 61.0
+offset_right = 61.0
+offset_bottom = 40.0
+columns = 3
+script = ExtResource("2_uamkw")
+
+[node name="CalcKeyContainer" type="GridContainer" parent="InputContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+offset_left = 65.0
+offset_right = 65.0
+offset_bottom = 40.0
+script = ExtResource("3_c0hs3")
+
+[node name="Submit" type="Button" parent="InputContainer/HBoxContainer"]
+layout_mode = 2
+offset_left = 65.0
+offset_right = 116.0
+offset_bottom = 40.0
+text = "SEND"
+
+[connection signal="pressed" from="InputContainer/HBoxContainer/Clear" to="InputContainer" method="_on_clear_pressed"]
+[connection signal="number_selected" from="InputContainer/HBoxContainer/10KeyContainer" to="InputContainer" method="_on_key_container_number_selected"]
+[connection signal="number_selected" from="InputContainer/HBoxContainer/CalcKeyContainer" to="InputContainer" method="_on_key_container_number_selected"]
+[connection signal="pressed" from="InputContainer/HBoxContainer/Submit" to="InputContainer" method="_on_submit_pressed"]
