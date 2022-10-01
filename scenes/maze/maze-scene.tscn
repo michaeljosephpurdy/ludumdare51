@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://csf6wuxsxl7d3"]
+
+[ext_resource type="PackedScene" uid="uid://c082gp8mtdcot" path="res://actors/turrets/basic-turret.tscn" id="1_cu03f"]
+[ext_resource type="Script" path="res://scenes/maze/maze-scene.gd" id="1_of4p7"]
+
+[node name="Maze" type="Node2D"]
+script = ExtResource("1_of4p7")
+
+[node name="BasicTurret" parent="." instance=ExtResource("1_cu03f")]
+position = Vector2(230, 302)

@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://qnkfoolydd1d"]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://scenes/math-fact/math-fact-scene.gd" id="1_bxbhc"]
 [ext_resource type="PackedScene" path="res://scenes/math-fact/problem.tscn" id="1_k0iyq"]
-[ext_resource type="PackedScene" uid="uid://c0wv3pvw8cuji" path="res://scenes/timer/timer_scene.tscn" id="2_blm13"]
+[ext_resource type="PackedScene" path="res://scenes/timer/timer-scene.tscn" id="2_blm13"]
 [ext_resource type="PackedScene" uid="uid://26u5sn70rvy5" path="res://scenes/math-fact/input/input.tscn" id="2_sxuls"]
 
 [node name="MathFactScene" type="Node2D"]

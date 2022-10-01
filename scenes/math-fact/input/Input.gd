@@ -46,14 +46,14 @@ func _input(ev) -> void:
 
 
 func _input_submitted(number: int) -> void:
-	if locked: return
+	if locked:	return
 	print('submitted')
 	self.input_submitted.emit(number)
 
 
 func _on_submit_pressed() -> void:
 	$InputContainer/Submit.release_focus()
-	if locked: return
+	if locked:	return
 	if (inputString == SPACE_STRING or inputString == EMPTY_STRING):
 		return
 	var input = inputString.to_int()
@@ -62,13 +62,13 @@ func _on_submit_pressed() -> void:
 
 
 func _on_number_selected(number: int) -> void:
-	if locked: return
+	if locked:	return
 	inputString += str(number)
 
 
 func _on_clear_pressed() -> void:
 	$InputContainer/Clear.release_focus()
-	if locked: return
+	if locked:	return
 	inputString = SPACE_STRING
 	print('cleared ' + inputString)
 

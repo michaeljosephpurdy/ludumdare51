@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://c082gp8mtdcot"]
+
+[ext_resource type="PackedScene" uid="uid://cbjkcej2pms7o" path="res://actors/turrets/base-turret.tscn" id="1_clia2"]
+[ext_resource type="Texture2D" uid="uid://byrmpwk3qgxao" path="res://actors/turrets/basic-turret.png" id="2_t8muy"]
+[ext_resource type="PackedScene" uid="uid://be7kjod14wqa3" path="res://actors/projectiles/base-projectile.tscn" id="3_w71o0"]
+
+[node name="Turret" node_paths=PackedStringArray("projectile") instance=ExtResource("1_clia2")]
+texture = ExtResource("2_t8muy")
+projectile = NodePath("Projectile")
+
+[node name="Projectile" parent="." index="3" instance=ExtResource("3_w71o0")]

@@ -17,7 +17,7 @@ func _on_input_input_submitted(answer: int) -> void:
 		failed_problem.emit()
 		return
 	$MathFact.new_fact()
-	Global.addCoin()
+	Global.add_coin()
 	solved_problem.emit()
 
 

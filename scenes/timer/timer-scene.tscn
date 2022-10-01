@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0wv3pvw8cuji"]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Theme" uid="uid://bkd5mi3gx2dp0" path="res://theme.tres" id="1_8icv0"]
-[ext_resource type="Script" path="res://scenes/timer/timer_scene.gd" id="1_ycny5"]
+[ext_resource type="Script" path="res://scenes/timer/timer-scene.gd" id="1_ycny5"]
 
 [node name="Timer" type="Node2D"]
 script = ExtResource("1_ycny5")

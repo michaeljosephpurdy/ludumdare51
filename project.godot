@@ -8,10 +8,32 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Node2D",
+"class": &"Enemy",
+"language": &"GDScript",
+"path": "res://actors/enemies/enemy.gd"
+}, {
+"base": "Node2D",
+"class": &"Projectile",
+"language": &"GDScript",
+"path": "res://actors/projectiles/projectile.gd"
+}, {
+"base": "Node2D",
+"class": &"Turret",
+"language": &"GDScript",
+"path": "res://actors/turrets/turret.gd"
+}]
+_global_script_class_icons={
+"Enemy": "",
+"Projectile": "",
+"Turret": ""
+}
+
 [application]
 
 config/name="ldcompo"
-run/main_scene="res://main_scene.tscn"
+run/main_scene="res://main-scene.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Mobile")
 config/icon="res://icon.svg"
 
@@ -36,3 +58,4 @@ ONE={
 [rendering]
 
 vulkan/rendering/back_end=1
+textures/canvas_textures/default_texture_filter=0

@@ -3,7 +3,7 @@ extends GridContainer
 signal number_selected(number)
 
 @onready
-var button_scene = preload('res://scenes/math-fact/input/numeric_button.tscn')
+var button_scene = preload('res://scenes/math-fact/input/numeric-button.tscn')
 
 func _ready() -> void:
 	for i in range(1, 10):
