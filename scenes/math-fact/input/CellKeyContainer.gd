@@ -1,9 +1,9 @@
 extends GridContainer
 
-signal number_selected
+signal number_selected(number)
 
 @onready
-var button_scene = preload('res://input/numeric_button.tscn')
+var button_scene = preload('res://scenes/math-fact/input/numeric_button.tscn')
 
 func _ready():
 	for i in range(7, 10):

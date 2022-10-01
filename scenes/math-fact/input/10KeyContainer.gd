@@ -1,9 +1,9 @@
 extends GridContainer
 
-signal number_selected
+signal number_selected(number)
 
 @onready
-var button_scene = preload('res://input/numeric_button.tscn')
+var button_scene = preload('res://scenes/math-fact/input/numeric_button.tscn')
 
 func _ready():
 	for i in range(1, 10):
@@ -23,5 +23,5 @@ func _process(delta):
 
 
 func emit_to_parent(number):
-	emit_signal('number_selected', number)
+	number_selected.emit(number)
 

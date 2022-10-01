@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxyivlseat2j8"]
+
+[ext_resource type="Script" path="res://scenes/math-fact/input/NumericButton.gd" id="1_1yqm0"]
+[ext_resource type="Theme" uid="uid://bkd5mi3gx2dp0" path="res://theme.tres" id="1_ph6p1"]
+
+[node name="NumericButton" type="Button"]
+offset_right = 98.0
+offset_bottom = 98.0
+theme = ExtResource("1_ph6p1")
+script = ExtResource("1_1yqm0")

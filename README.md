@@ -28,12 +28,42 @@ I figured this may be a fun way for him to.
 
 ## Overview
 
-The idea is that enemies will come at you, and you will have 10 seconds to gun them down by solving math facts.
+~The idea is that enemies will come at you, and you will have 10 seconds to gun them down by solving math facts.~
+
+I thought of a _better_ idea last night.
+This is dangerous though, because this is **scope creep**.
+
+This will be a mashup between a math game and a tower defence game.
+
+Every 10 seconds you
+* solve as many math facts as you can
+* buy and place turrets
+* withstand a wave of enemies
+
+---
 
 ## TODO
-* 
+
+**General**
+
+**Math Facts**
+
+**Shop**
+* Shop mode
+
+**Build**
+* Build mode
+
+**Tower Defence**
+* TD mode
+
+## CURRENT
+
+* Ten Second Timer
 
 ## DONE
-* 
+
+* Refactor input to add keyboard input
+* Basic input setup
 
 

@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://26u5sn70rvy5"]
+
+[ext_resource type="Script" path="res://scenes/math-fact/input/Input.gd" id="1_yjo6d"]
+[ext_resource type="Theme" uid="uid://bkd5mi3gx2dp0" path="res://theme.tres" id="2_wnvt5"]
+[ext_resource type="Script" path="res://scenes/math-fact/input/10KeyContainer.gd" id="3_lox0b"]
+[ext_resource type="Script" path="res://scenes/math-fact/input/CellKeyContainer.gd" id="4_wbl8b"]
+
+[node name="MathFactInput" type="Node2D"]
+script = ExtResource("1_yjo6d")
+
+[node name="InputContainer" type="VBoxContainer" parent="."]
+offset_right = 180.0
+offset_bottom = 213.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_wnvt5")
+
+[node name="Submitted" type="Label" parent="InputContainer"]
+visible = false
+offset_right = 180.0
+offset_bottom = 23.0
+theme = ExtResource("2_wnvt5")
+
+[node name="Current" type="Label" parent="InputContainer"]
+offset_right = 180.0
+offset_bottom = 69.0
+theme = ExtResource("2_wnvt5")
+horizontal_alignment = 2
+
+[node name="Submit" type="Button" parent="InputContainer"]
+offset_top = 73.0
+offset_right = 180.0
+offset_bottom = 150.0
+theme = ExtResource("2_wnvt5")
+text = "SEND"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InputContainer"]
+offset_top = 154.0
+offset_right = 180.0
+offset_bottom = 154.0
+theme = ExtResource("2_wnvt5")
+theme_override_constants/separation = 5
+
+[node name="TenKeyContainer" type="GridContainer" parent="InputContainer/HBoxContainer"]
+visible = false
+offset_top = -4.0
+offset_right = 180.0
+offset_bottom = -4.0
+theme = ExtResource("2_wnvt5")
+columns = 3
+script = ExtResource("3_lox0b")
+
+[node name="CalcKeyContainer" type="GridContainer" parent="InputContainer/HBoxContainer"]
+theme = ExtResource("2_wnvt5")
+columns = 3
+script = ExtResource("4_wbl8b")
+
+[node name="Clear" type="Button" parent="InputContainer"]
+offset_top = 158.0
+offset_right = 180.0
+offset_bottom = 235.0
+theme = ExtResource("2_wnvt5")
+text = "CLEAR"
+
+[connection signal="pressed" from="InputContainer/Submit" to="." method="_on_submit_pressed"]
+[connection signal="number_selected" from="InputContainer/HBoxContainer/TenKeyContainer" to="." method="_on_number_selected"]
+[connection signal="number_selected" from="InputContainer/HBoxContainer/CalcKeyContainer" to="." method="_on_number_selected"]
+[connection signal="pressed" from="InputContainer/Clear" to="." method="_on_clear_pressed"]
