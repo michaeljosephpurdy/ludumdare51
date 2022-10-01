@@ -35,35 +35,45 @@ This is dangerous though, because this is **scope creep**.
 
 This will be a mashup between a math game and a tower defence game.
 
-Every 10 seconds you
+The idea is you own a pizza shop.
+It's the best pizza shop around.
+There are zombies and other undead creatures trying to break in.
+This is because they love pizza and haven't had it since they were alive.
+You must protect your pizza shop, so you place turrets throughout the town to stop them
+
+There will be four main gameplay loops, each taking 10 seconds.
+The gameplay loops are:
 * solve as many math facts as you can
-* buy and place turrets
+  * this is how you earn coins to buy turrets
+* buy turrets or upgrades
+* place turrets or make repairs to existing turrets
 * withstand a wave of enemies
 
 ---
 
 ## TODO
 
-**General**
+* [asset] tileset for city
+* [shop] be able to buy turrets
+* [build] able to place turrets
+* [td] Get pathfinding to work
+  * have basic enemy pathfind through street
+  * or a set of waypoints
+* [juice] make enemies flash white when hit
+* [asset] gameplay loop music
+* [asset] pizza shop sprite
 
-**Math Facts**
-
-**Shop**
-* Shop mode
-
-**Build**
-* Build mode
-
-**Tower Defence**
-* TD mode
 
 ## CURRENT
 
 
 ## DONE
 
-* Refactor input to add keyboard input
-* Basic input setup
-* Ten Second Timer
+* [td] base turret
+* [td] base enemy
+* [td] base projectile
+* [math] refactor input to add keyboard input
+* [math] basic input setup
+* [general] ten second timer
 
 
