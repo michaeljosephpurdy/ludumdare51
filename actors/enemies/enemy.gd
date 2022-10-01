@@ -1,20 +1,21 @@
-extends Node2D
+extends PathFollow2D
 
 class_name Enemy
 
 @export
 var hp: int = 10
 @export
-var speed: int = 10
+var speed: int = 100
 @export
 var texture: Texture2D
 
 
 func _ready() -> void:
-	pass
+	$Sprite.texture = texture
 
 
 func _process(delta) -> void:
+	self.progress = self.progress + (speed * delta)
 	if (hp <= 0):
 		queue_free()
 

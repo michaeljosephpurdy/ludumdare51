@@ -4,5 +4,4 @@
 [ext_resource type="Texture2D" uid="uid://hopqde0852px" path="res://actors/enemies/skeleton.png" id="2_f388j"]
 
 [node name="Skeleton" instance=ExtResource("1_ib7j2")]
-speed = 100
 texture = ExtResource("2_f388j")

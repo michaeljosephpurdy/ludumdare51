@@ -56,9 +56,6 @@ The gameplay loops are:
 * [asset] tileset for city
 * [shop] be able to buy turrets
 * [build] able to place turrets
-* [td] Get pathfinding to work
-  * have basic enemy pathfind through street
-  * or a set of waypoints
 * [juice] make enemies flash white when hit
 * [asset] gameplay loop music
 * [asset] pizza shop sprite
@@ -69,11 +66,14 @@ The gameplay loops are:
 
 ## DONE
 
-* [td] base turret
-* [td] base enemy
-* [td] base projectile
-* [math] refactor input to add keyboard input
-* [math] basic input setup
 * [general] ten second timer
+* [math] basic input setup
+* [math] refactor input to add keyboard input
+* [td] base projectile
+* [td] base enemy
+* [td] base turret
+* [td] Get pathfinding to work
+  * Path2D and PathFollow2D made this almost too easy
+* [asset] horrible looking sprite for city
 
 

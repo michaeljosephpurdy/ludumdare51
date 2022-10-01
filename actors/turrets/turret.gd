@@ -34,7 +34,7 @@ func _process(dela: float) -> void:
 				_target = target
 				print('assigned target')
 		return
-	if global_position.distance_to(_target.position) >= radius:
+	if global_position.distance_to(_target.global_position) >= radius:
 		_target = null
 		print('removed target')
 		return
@@ -42,7 +42,7 @@ func _process(dela: float) -> void:
 
 
 func detect_target() -> Array[Enemy]:
-	var children = get_parent().get_children()
+	var children = get_parent().get_enemies()
 	var targets = []
 	for child in children:
 		if (child is Enemy):
