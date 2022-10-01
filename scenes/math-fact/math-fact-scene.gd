@@ -19,3 +19,11 @@ func _on_input_input_submitted(answer):
 	$MathFact.new_fact()
 	solved_problem.emit()
 
+
+func _on_timer_finished():
+	print('finished!')
+	$Input.lock()
+
+
+func _on_timer_started():
+	$Input.unlock()

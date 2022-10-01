@@ -59,11 +59,11 @@ Every 10 seconds you
 
 ## CURRENT
 
-* Ten Second Timer
 
 ## DONE
 
 * Refactor input to add keyboard input
 * Basic input setup
+* Ten Second Timer
 
 
