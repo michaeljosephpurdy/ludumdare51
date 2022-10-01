@@ -4,15 +4,6 @@ signal input_submitted
 
 const SPACE_STRING = ' '
 const EMPTY_STRING = ''
-
-const VALID_KEYS = [
-	KEY_0,	KEY_1,	KEY_2,	KEY_3,
-	KEY_4,	KEY_5,	KEY_6,
-	KEY_7,	KEY_8,	KEY_9,
-	KEY_ENTER,
-	KEY_BACKSPACE,
-]
-
 const KEY_VALUE_MAP = {
 	KEY_0: 0,
 	KEY_1: 1,
@@ -32,15 +23,15 @@ var inputString: String
 var locked: bool
 
 
-func _ready():
+func _ready() -> void:
 	$InputContainer/Current.set_text(EMPTY_STRING)
 
 
-func _process(delta):
+func _process(delta: float) -> void:
 	$InputContainer/Current.set_text(inputString)
 
 
-func _input(ev):
+func _input(ev) -> void:
 	if not ev is InputEventKey or not KEY_VALUE_MAP.has(ev.keycode):
 		return
 	if ev.echo or not ev.pressed:
@@ -54,13 +45,13 @@ func _input(ev):
 	_on_number_selected(number)
 
 
-func _input_submitted(number):
+func _input_submitted(number: int) -> void:
 	if locked: return
 	print('submitted')
 	self.input_submitted.emit(number)
 
 
-func _on_submit_pressed():
+func _on_submit_pressed() -> void:
 	$InputContainer/Submit.release_focus()
 	if locked: return
 	if (inputString == SPACE_STRING or inputString == EMPTY_STRING):
@@ -70,20 +61,20 @@ func _on_submit_pressed():
 	_on_clear_pressed()
 
 
-func _on_number_selected(number):
+func _on_number_selected(number: int) -> void:
 	if locked: return
 	inputString += str(number)
 
 
-func _on_clear_pressed():
+func _on_clear_pressed() -> void:
 	$InputContainer/Clear.release_focus()
 	if locked: return
 	inputString = SPACE_STRING
 	print('cleared ' + inputString)
 
 
-func lock():
+func lock() -> void:
 	locked = true
 	
-func unlock():
+func unlock() -> void:
 	locked = false

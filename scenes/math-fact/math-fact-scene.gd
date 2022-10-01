@@ -4,26 +4,27 @@ signal solved_problem
 signal failed_problem
 
 
-func _ready():
-	pass # Replace with function body.
-
-
-func _process(delta):
+func _ready() -> void:
 	pass
 
 
-func _on_input_input_submitted(answer):
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_input_input_submitted(answer: int) -> void:
 	if not $MathFact.is_correct_answer(answer):
 		failed_problem.emit()
 		return
 	$MathFact.new_fact()
+	Global.addCoin()
 	solved_problem.emit()
 
 
-func _on_timer_finished():
+func _on_timer_finished() -> void:
 	print('finished!')
 	$Input.lock()
 
 
-func _on_timer_started():
+func _on_timer_started() -> void:
 	$Input.unlock()
