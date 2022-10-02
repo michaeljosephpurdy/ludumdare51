@@ -1,59 +1,78 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpo7y46lje1bp"]
+[gd_scene load_steps=4 format=3 uid="uid://cpo7y46lje1bp"]
 
 [ext_resource type="Script" path="res://item.gd" id="1_8bapb"]
 [ext_resource type="Theme" uid="uid://bkd5mi3gx2dp0" path="res://theme.tres" id="2_dhomw"]
+[ext_resource type="Texture2D" uid="uid://cvqh00ymskk3v" path="res://scenes/shop/item.png" id="3_1rj3u"]
 
-[node name="Item" type="Node2D"]
+[node name="Item" type="Control"]
+custom_minimum_size = Vector2i(720, 160)
+layout_mode = 3
+anchor_right = 0.563
+anchor_bottom = 0.149
+offset_right = 314.64
+offset_bottom = -0.919998
 script = ExtResource("1_8bapb")
+metadata/_edit_vertical_guides_ = [-322.0]
+metadata/_edit_horizontal_guides_ = [21.0, 142.0]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 153.0
-offset_right = 715.0
-offset_bottom = 141.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 170.0
+offset_top = 40.0
+offset_right = 270.0
+offset_bottom = 130.0
 theme = ExtResource("2_dhomw")
+theme_override_constants/separation = 17
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-offset_right = 100.0
-offset_bottom = 141.0
-theme = ExtResource("2_dhomw")
-
-[node name="CostLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+[node name="CostLabel" type="Label" parent="VBoxContainer"]
 offset_right = 100.0
 offset_bottom = 31.0
 theme = ExtResource("2_dhomw")
 theme_override_font_sizes/font_size = 20
 text = "cost: 0"
 
-[node name="DamageLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
-offset_top = 35.0
+[node name="DamageLabel" type="Label" parent="VBoxContainer"]
+offset_top = 48.0
 offset_right = 100.0
-offset_bottom = 66.0
+offset_bottom = 79.0
 theme = ExtResource("2_dhomw")
 theme_override_font_sizes/font_size = 20
 text = "damage: 0"
 
-[node name="RadiusLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
-offset_top = 70.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+offset_left = 360.0
+offset_top = 40.0
+offset_right = 460.0
+offset_bottom = 130.0
+theme = ExtResource("2_dhomw")
+theme_override_constants/separation = 17
+
+[node name="RadiusLabel" type="Label" parent="VBoxContainer2"]
 offset_right = 100.0
-offset_bottom = 101.0
+offset_bottom = 31.0
 theme = ExtResource("2_dhomw")
 theme_override_font_sizes/font_size = 20
 text = "radius: 0"
 
-[node name="FireRateLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
-offset_top = 105.0
+[node name="FireRateLabel" type="Label" parent="VBoxContainer2"]
+offset_top = 48.0
 offset_right = 100.0
-offset_bottom = 136.0
+offset_bottom = 79.0
 theme = ExtResource("2_dhomw")
 theme_override_font_sizes/font_size = 20
 text = "speed: 0"
 
-[node name="BuyButton" type="Button" parent="HBoxContainer"]
-offset_left = 104.0
-offset_right = 212.0
-offset_bottom = 141.0
+[node name="BuyButton" type="Button" parent="."]
+offset_left = 603.0
+offset_top = 10.0
+offset_right = 711.0
+offset_bottom = 151.0
 theme = ExtResource("2_dhomw")
 disabled = true
 text = "BUY"
 
-[connection signal="pressed" from="HBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("3_1rj3u")
+centered = false
+
+[connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]

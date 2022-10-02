@@ -50,8 +50,9 @@ func toggle_timer(should_run: bool) -> void:
 		$Timer.stop()
 
 func detect_target() -> Array[Enemy]:
-	if get_parent().name == 'Item':	return []
-	var children = get_parent().get_enemies()
+	var children = []
+	if get_parent().has_method('get_enemies'):
+		children = get_parent().get_enemies()
 	var targets = []
 	for child in children:
 		if (child is Enemy):

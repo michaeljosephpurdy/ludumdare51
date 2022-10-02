@@ -11,8 +11,12 @@ In 3rd grade, as well as in 4th grade, his class does math facts.
 The concept is pretty straight forward:
 
 > There are 100 math questions on a page
+> 
 > Students have 4 minutes to complete as many questions as possible
+> 
 > Students are graded by how many questions they answer correctly within the time limit
+> 
+> They are then graded accordingly:
 > 
 > | grade        | skill              |
 > |:-------------|:-------------------|
@@ -22,9 +26,9 @@ The concept is pretty straight forward:
 > | 79 and below | Below Basic        |
 
 My son has a really, _really_, hard time with this.
-The time limit sort of psychs makes him psych himself out.
+The time limit sort of makes him psych himself out.
 
-I figured this may be a fun way for him to.
+I figured this may be a fun way for him to practice them.
 
 ## Overview
 
@@ -54,7 +58,6 @@ The gameplay loops are:
 ## TODO
 
 * [asset] tileset for city
-* [build] able to place turrets
 * [juice] make enemies flash white when hit
 * [asset] gameplay loop music
 * [asset] pizza shop sprite
@@ -62,11 +65,12 @@ The gameplay loops are:
 
 ## CURRENT
 
-* [shop] extendable Item which has Turret child
-* [shop] be able to buy turrets
+* [build] able to place turrets
 
 ## DONE
 
+* [shop] extendable Item which has Turret child
+* [shop] be able to buy turrets
 * [general] ten second timer
 * [math] basic input setup
 * [math] refactor input to add keyboard input
