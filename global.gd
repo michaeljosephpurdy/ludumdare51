@@ -11,6 +11,8 @@ enum State {
 	TITLE,
 }
 
+var TIME: float = 10.0
+
 var _coin_count: int
 var _debug: bool = true
 var _current_state: State = State.DEFEND

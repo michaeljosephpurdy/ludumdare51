@@ -10,16 +10,19 @@ _data = {
 }
 point_count = 9
 
-[node name="Maze" type="Node2D"]
+[node name="DefendScene" type="Node2D"]
 script = ExtResource("1_of4p7")
 
 [node name="BasicTurret" parent="." instance=ExtResource("1_cu03f")]
-position = Vector2(192, 192)
+position = Vector2(200, 758)
+
+[node name="BasicTurret2" parent="." instance=ExtResource("1_cu03f")]
+position = Vector2(578, 192)
 
 [node name="EnemyPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_ubkud")
 
 [node name="Background" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -10
 texture = ExtResource("3_0kmgw")
 centered = false

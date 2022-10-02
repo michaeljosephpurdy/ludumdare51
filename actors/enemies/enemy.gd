@@ -5,7 +5,7 @@ class_name Enemy
 @export
 var hp: int = 10
 @export
-var speed: int = 100
+var speed: int = 150
 @export
 var texture: Texture2D
 var id: int

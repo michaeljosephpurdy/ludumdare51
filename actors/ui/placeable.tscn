@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhx4vgoau1u78"]
+
+[ext_resource type="Script" path="res://actors/ui/Placeable.gd" id="1_pc7p3"]
+[ext_resource type="Texture2D" uid="uid://ch6ns0oxa0arn" path="res://icon.svg" id="2_epwnt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dy74"]
+size = Vector2(64, 64)
+
+[node name="Placeable" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_pc7p3")
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1dy74")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_epwnt")

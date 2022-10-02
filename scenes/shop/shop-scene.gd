@@ -23,4 +23,4 @@ func unlock():
 
 func _on_item_purchased(turret: Turret):
 	Global.deduct_cost(turret.cost)
-	Global.add_purchased_item(turret)
+	Global.add_purchased_item(turret.duplicate())

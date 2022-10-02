@@ -14,9 +14,11 @@ func _get_scene(state: int) -> Node:
 		Global.State.BUY_STAGE:
 			return $ShopScene
 		Global.State.DEFEND:
-			return $Maze
+			return $DefendScene
 		Global.State.MATH_FACT:
 			return $MathFactScene
+		Global.State.PLACE_STAGE:
+			return $PlaceTurretScene
 		_:
 			return null
 
@@ -39,6 +41,8 @@ func _on_times_up_done() -> void:
 		Global.State.DEFEND:
 			Global.set_next_state(Global.State.MATH_FACT)
 		Global.State.BUY_STAGE:
+			Global.set_next_state(Global.State.PLACE_STAGE)
+		Global.State.PLACE_STAGE:
 			Global.set_next_state(Global.State.DEFEND)
 		_:
 			assert(false)

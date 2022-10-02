@@ -62,14 +62,15 @@ The gameplay loops are:
 * [asset] gameplay loop music
 * [asset] pizza shop sprite
 * lots and lots of unknown tasks
-
+* [td] set all turret positions from placement
 
 ## CURRENT
 
-* [build] able to place turrets
+* [build] turret placement less janky
 
 ## DONE
 
+* [build] able to place turrets
 * [shop] extendable Item which has Turret child
 * [shop] be able to buy turrets
 * [general] ten second timer

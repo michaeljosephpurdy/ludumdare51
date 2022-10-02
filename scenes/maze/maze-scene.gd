@@ -7,6 +7,7 @@ var _turrets: Array[Turret]
 var _enemy_count = 0
 
 func _ready() -> void:
+	unlock()
 	_turrets.push_back($BasicTurret)
 	pass
 

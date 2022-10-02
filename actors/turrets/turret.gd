@@ -13,7 +13,7 @@ var damage: int = 1
 @export
 var radius: int = 300
 @export
-var cost: int = 1
+var cost: int = 4
 
 var _target: Enemy
 

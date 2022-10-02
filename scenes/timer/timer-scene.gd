@@ -9,8 +9,8 @@ var timer: Timer = $Timer
 var progress_bar: ProgressBar = $ProgressBar
 
 func _ready() -> void:
-	pass
-
+	$Timer.wait_time = Global.TIME
+	print('hi')
 
 func _process(delta: float) -> void:
 	var time_left = timer.time_left

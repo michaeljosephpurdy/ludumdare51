@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://jmmghmklcfmy"]
+
+[ext_resource type="Script" path="res://scenes/place/place-turret-scene.gd" id="1_dm0si"]
+[ext_resource type="Texture2D" uid="uid://cqoltod2agmoa" path="res://scenes/maze/background.png" id="2_qer1h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h74h5"]
+size = Vector2(374.5, 208)
+
+[node name="PlaceTurretScene" type="Node2D"]
+script = ExtResource("1_dm0si")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+texture = ExtResource("2_qer1h")
+centered = false
+
+[node name="ParkingLot" type="Area2D" parent="."]
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="ParkingLot"]
+position = Vector2(189.75, 974)
+shape = SubResource("RectangleShape2D_h74h5")
+
+[connection signal="body_entered" from="ParkingLot" to="." method="_on_parking_lot_body_entered"]
+[connection signal="body_exited" from="ParkingLot" to="." method="_on_parking_lot_body_exited"]
