@@ -12,6 +12,8 @@ var fire_rate: float = 0.4
 var damage: int = 1
 @export
 var radius: int = 300
+@export
+var cost: int = 1
 
 var _target: Enemy
 
@@ -48,6 +50,7 @@ func toggle_timer(should_run: bool) -> void:
 		$Timer.stop()
 
 func detect_target() -> Array[Enemy]:
+	if get_parent().name == 'Item':	return []
 	var children = get_parent().get_enemies()
 	var targets = []
 	for child in children:

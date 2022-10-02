@@ -54,7 +54,6 @@ The gameplay loops are:
 ## TODO
 
 * [asset] tileset for city
-* [shop] be able to buy turrets
 * [build] able to place turrets
 * [juice] make enemies flash white when hit
 * [asset] gameplay loop music
@@ -63,6 +62,8 @@ The gameplay loops are:
 
 ## CURRENT
 
+* [shop] extendable Item which has Turret child
+* [shop] be able to buy turrets
 
 ## DONE
 

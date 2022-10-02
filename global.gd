@@ -33,8 +33,12 @@ func add_coin() -> void:
 	print('new coin_count ' + str(_coin_count))
 
 
+func get_coin() -> int:
+	return _coin_count
+
+
 func can_afford(cost: int) -> bool:
-	return _coin_count - cost < 0
+	return _coin_count - cost >= 0
 
 
 func deduct_cost(cost: int) -> void:

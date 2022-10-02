@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj65flk5uwcu3"]
+[gd_scene load_steps=8 format=3 uid="uid://cj65flk5uwcu3"]
 
 [ext_resource type="PackedScene" uid="uid://c4rscqcj174fc" path="res://scenes/math-fact/math-fact-scene.tscn" id="1_k0jyn"]
 [ext_resource type="Script" path="res://main-scene.gd" id="1_yffwb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dm84b38lkrruc" path="res://scenes/times-up-alert.tscn" id="3_adc8f"]
 [ext_resource type="PackedScene" uid="uid://c8a5bjuh2rty0" path="res://scenes/timer/timer-scene.tscn" id="4_cweye"]
 [ext_resource type="PackedScene" uid="uid://csf6wuxsxl7d3" path="res://scenes/maze/maze-scene.tscn" id="6_18ma8"]
+[ext_resource type="PackedScene" uid="uid://cxstp1t33rfon" path="res://scenes/shop/shop-scene.tscn" id="7_qaua2"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_yffwb")
@@ -22,6 +23,9 @@ z_index = 9
 visible = false
 
 [node name="Maze" parent="." instance=ExtResource("6_18ma8")]
+visible = false
+
+[node name="ShopScene" parent="." instance=ExtResource("7_qaua2")]
 visible = false
 
 [connection signal="fade_in_finished" from="Fader" to="." method="_on_fader_fade_in_finished"]

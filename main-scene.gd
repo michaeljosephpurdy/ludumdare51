@@ -11,6 +11,8 @@ func _process(delta: float) -> void:
 
 func _get_scene(state: int) -> Node:
 	match (state):
+		Global.State.BUY_STAGE:
+			return $ShopScene
 		Global.State.DEFEND:
 			return $Maze
 		Global.State.MATH_FACT:
@@ -33,9 +35,11 @@ func _on_times_up_done() -> void:
 	$Fader.fade_out()
 	match (Global.get_current_state()):
 		Global.State.MATH_FACT:
-			Global.set_next_state(Global.State.DEFEND)
+			Global.set_next_state(Global.State.BUY_STAGE)
 		Global.State.DEFEND:
 			Global.set_next_state(Global.State.MATH_FACT)
+		Global.State.BUY_STAGE:
+			Global.set_next_state(Global.State.DEFEND)
 		_:
 			assert(false)
 			return null

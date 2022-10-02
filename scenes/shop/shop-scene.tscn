@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxstp1t33rfon"]
+
+[ext_resource type="Script" path="res://scenes/shop/shop-scene.gd" id="1_jgcw8"]
+[ext_resource type="Theme" uid="uid://bkd5mi3gx2dp0" path="res://theme.tres" id="2_sn0yy"]
+[ext_resource type="PackedScene" uid="uid://cpo7y46lje1bp" path="res://scenes/shop/item.tscn" id="3_atn5v"]
+[ext_resource type="PackedScene" uid="uid://c082gp8mtdcot" path="res://actors/turrets/basic-turret.tscn" id="3_qw7ro"]
+
+[node name="ShopScene" type="Node2D"]
+position = Vector2(1, 75)
+script = ExtResource("1_jgcw8")
+
+[node name="CurrentCoinLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("2_sn0yy")
+text = "Coin"
+
+[node name="BasicTurretContainer" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 211.0
+offset_top = 145.0
+offset_right = 331.0
+offset_bottom = 298.0
+
+[node name="BasicTurretLabel" type="Label" parent="BasicTurretContainer"]
+layout_mode = 2
+offset_right = 120.0
+offset_bottom = 72.0
+theme = ExtResource("2_sn0yy")
+text = "Stats"
+
+[node name="BasicTurretButton" type="Button" parent="BasicTurretContainer"]
+layout_mode = 2
+offset_top = 76.0
+offset_right = 120.0
+offset_bottom = 153.0
+theme = ExtResource("2_sn0yy")
+text = "Buy"
+
+[node name="Item" parent="." instance=ExtResource("3_atn5v")]
+position = Vector2(101, 220)
+
+[node name="BasicTurret" parent="Item" instance=ExtResource("3_qw7ro")]
+position = Vector2(63, 64)
+
+[connection signal="purchased" from="Item" to="." method="_on_item_purchased"]
