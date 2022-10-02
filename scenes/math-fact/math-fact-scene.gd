@@ -21,10 +21,10 @@ func _on_input_input_submitted(answer: int) -> void:
 	solved_problem.emit()
 
 
-func _on_timer_finished() -> void:
-	print('finished!')
+func lock() -> void:
 	$Input.lock()
 
 
-func _on_timer_started() -> void:
+func unlock() -> void:
 	$Input.unlock()
+

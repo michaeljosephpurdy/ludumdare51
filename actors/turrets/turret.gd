@@ -17,7 +17,7 @@ var _target: Enemy
 
 
 func _ready() -> void:
-	$Timer.start(fire_rate)
+	$Timer.wait_time = fire_rate
 	$Detector.scale.x = radius
 	$Detector.scale.y = radius
 	assert(texture)
@@ -41,16 +41,24 @@ func _process(dela: float) -> void:
 	look_at(_target.position)
 
 
+func toggle_timer(should_run: bool) -> void:
+	if (should_run):
+		$Timer.start()
+	else:
+		$Timer.stop()
+
 func detect_target() -> Array[Enemy]:
 	var children = get_parent().get_enemies()
 	var targets = []
 	for child in children:
 		if (child is Enemy):
-			targets.push_back(child)
+			if global_position.distance_to(child.global_position) <= radius:
+				targets.push_back(child)
 	return targets
 
 
 func _on_timer_timeout() -> void:
+	print('timer!')
 	if _target == null:	return
 	var new_projectile = projectile.duplicate()
 	if new_projectile == null:
@@ -65,3 +73,4 @@ func _on_timer_timeout() -> void:
 
 func _on_bullet_hit(bullet_target: Enemy) -> void:
 	bullet_target.inflict_damage(damage)
+

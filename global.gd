@@ -1,7 +1,20 @@
 extends Node
 
+
+enum State {
+	MATH_FACT,
+	BUY_STAGE,
+	PLACE_STAGE,
+	DEFEND,
+	MAIN_MENU,
+	GAME_OVER,
+	TITLE,
+}
+
 var _coin_count: int
 var _debug: bool = true
+var _current_state: State = State.DEFEND
+var _previous_state: State
 
 func _ready() -> void:
 	pass
@@ -14,9 +27,11 @@ func _process(delta: float) -> void:
 func is_debug_enabled() -> bool:
 	return _debug
 
+
 func add_coin() -> void:
 	_coin_count += 1
 	print('new coin_count ' + str(_coin_count))
+
 
 func can_afford(cost: int) -> bool:
 	return _coin_count - cost < 0
@@ -26,3 +41,13 @@ func deduct_cost(cost: int) -> void:
 	assert(can_afford(cost), 'attempted to deduct_cost with too little coin')
 	_coin_count = _coin_count- cost
 
+
+func get_current_state() -> int:
+	return _current_state
+
+func get_previous_state() -> int:
+	return _previous_state
+
+func set_next_state(state: State) -> void:
+	_previous_state = _current_state
+	_current_state = state

@@ -1,28 +1,56 @@
 extends Node2D
 
-enum State {
-	MATH_FACT,
-	BUY_STAGE,
-	PLACE_STAGE,
-	DEFEND,
-	MAIN_MENU,
-	GAME_OVER,
-	TITLE,
-}
 
-var current_state: State
-var previous_state: State
+func _ready() -> void:
+	Global.set_next_state(Global.State.MATH_FACT)
+	_on_fader_fade_out_finished()
+
+func _process(delta: float) -> void:
+	pass
 
 
-func _ready():
-	previous_state = State.TITLE
-	current_state = State.MATH_FACT
-
-
-func _process(delta):
-	if (current_state == previous_state):	return
-	match(current_state):
-		State.MATH_FACT:
-			$MathFactScene.show()
+func _get_scene(state: int) -> Node:
+	match (state):
+		Global.State.DEFEND:
+			return $Maze
+		Global.State.MATH_FACT:
+			return $MathFactScene
 		_:
-			$MathFactScene.hide()
+			return null
+
+
+func _on_timer_started() -> void:
+	pass
+
+
+func _on_timer_finished() -> void:
+	var scene = _get_scene(Global.get_current_state())
+	scene.lock()
+	$TimesUp.times_up()
+
+
+func _on_times_up_done() -> void:
+	$Fader.fade_out()
+	match (Global.get_current_state()):
+		Global.State.MATH_FACT:
+			Global.set_next_state(Global.State.DEFEND)
+		Global.State.DEFEND:
+			Global.set_next_state(Global.State.MATH_FACT)
+		_:
+			assert(false)
+			return null
+
+
+func _on_fader_fade_in_finished():
+	var scene = _get_scene(Global.get_current_state())
+	scene.unlock()
+	$Timer.start()
+
+
+func _on_fader_fade_out_finished():
+	var current_scene = _get_scene(Global.get_current_state())
+	current_scene.visible = true
+	var previous_scene = _get_scene(Global.get_previous_state())
+	previous_scene.visible = false
+	$Fader.fade_in()
+

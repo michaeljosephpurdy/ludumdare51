@@ -8,6 +8,7 @@ var hp: int = 10
 var speed: int = 100
 @export
 var texture: Texture2D
+var id: int
 
 
 func _ready() -> void:
@@ -15,6 +16,7 @@ func _ready() -> void:
 
 
 func _process(delta) -> void:
+	if (Global.get_current_state() != Global.State.DEFEND): return
 	self.progress = self.progress + (speed * delta)
 	if (hp <= 0):
 		queue_free()
@@ -22,5 +24,5 @@ func _process(delta) -> void:
 
 func inflict_damage(damage: int) -> void:
 	hp = hp - damage
-	print('ouch!')
+	$AnimationPlayer.play('hit')
 

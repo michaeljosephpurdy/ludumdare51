@@ -9,7 +9,7 @@ var timer: Timer = $Timer
 var progress_bar: ProgressBar = $ProgressBar
 
 func _ready() -> void:
-	start()
+	pass
 
 
 func _process(delta: float) -> void:
