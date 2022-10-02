@@ -26,9 +26,9 @@ The concept is pretty straight forward:
 > | 79 and below | Below Basic        |
 
 My son has a really, _really_, hard time with this.
-The time limit sort of makes him psych himself out.
+He's actually pretty good at math, but the time limit gets him distracted and he stops focusing on the problems and focuses more on how much time is left.
 
-I figured this may be a fun way for him to practice them.
+I figured this may be a fun way for him to practice.
 
 ## Overview
 
