@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byrmpwk3qgxao"
-path="res://.godot/imported/basic-turret.png-cc3c3fb076644af8fb042a42f5c76379.ctex"
+uid="uid://b1i54qhwjm2wb"
+path="res://.godot/imported/sauce-turret.png-1d9e7f9f285fcf861cd8dae8abd2f4ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actors/turrets/basic-turret.png"
-dest_files=["res://.godot/imported/basic-turret.png-cc3c3fb076644af8fb042a42f5c76379.ctex"]
+source_file="res://actors/turrets/sauce-turret.png"
+dest_files=["res://.godot/imported/sauce-turret.png-1d9e7f9f285fcf861cd8dae8abd2f4ca.ctex"]
 
 [params]
 

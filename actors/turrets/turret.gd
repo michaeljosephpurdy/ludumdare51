@@ -2,26 +2,57 @@ extends Node2D
 
 class_name Turret
 
+const _STATS_MAP = [
+	# Pepperoni
+	{
+		'fire_rate': 0.4,
+		'damage': 3,
+		'radius': 300,
+		'cost': 5,
+	},
+	# Sauce
+	{
+		'fire_rate': 0.2,
+		'damage': 0.5,
+		'radius': 300,
+		'cost': 10,
+		'immobile': true,
+	},
+	# Dough
+	{
+		'fire_rate': 0.4,
+		'damage': 8,
+		'radius': 300,
+		'cost': 14,
+	},
+]
+
+@export_enum("Pepperoni", "Sauce", "Dough")
+var type: int
 @export
 var texture: Texture2D
 @export
 var projectile: Node2D
-@export
-var fire_rate: float = 0.4
-@export
-var damage: int = 1
-@export
-var radius: int = 300
-@export
-var cost: int = 4
 
+var _fire_rate: float
+var _radius: int
+var _cost: int
+var _damage: int
+var _immobile: bool
 var _target: Enemy
-
+var _type: Global.TurretType
 
 func _ready() -> void:
-	$Timer.wait_time = fire_rate
-	$Detector.scale.x = radius
-	$Detector.scale.y = radius
+	_type = type as Global.TurretType
+	var stats = _STATS_MAP[_type]
+	_fire_rate = stats.get('fire_rate')
+	_radius = stats.get('radius')
+	_cost= stats.get('cost')
+	_damage = stats.get('damage')
+	_immobile = stats.get('immobile') or false
+	$Timer.wait_time = _fire_rate
+	$Detector.scale.x = _radius
+	$Detector.scale.y = _radius
 	assert(texture)
 	if (texture):
 		$Sprite.texture = texture
@@ -32,15 +63,16 @@ func _process(dela: float) -> void:
 		var potential_targets = detect_target()
 		if potential_targets.is_empty():	return
 		for target in potential_targets:
-			if global_position.distance_to(target.global_position) <= radius:
+			if global_position.distance_to(target.global_position) <= _radius:
 				_target = target
 				print('assigned target')
 		return
-	if global_position.distance_to(_target.global_position) >= radius:
+	if global_position.distance_to(_target.global_position) >= _radius:
 		_target = null
 		print('removed target')
 		return
-	look_at(_target.position)
+	if not _immobile:
+		look_at(_target.position)
 
 
 func toggle_timer(should_run: bool) -> void:
@@ -56,7 +88,7 @@ func detect_target() -> Array[Enemy]:
 	var targets = []
 	for child in children:
 		if (child is Enemy):
-			if global_position.distance_to(child.global_position) <= radius:
+			if global_position.distance_to(child.global_position) <= _radius:
 				targets.push_back(child)
 	return targets
 
@@ -76,5 +108,7 @@ func _on_timer_timeout() -> void:
 
 
 func _on_bullet_hit(bullet_target: Enemy) -> void:
-	bullet_target.inflict_damage(damage)
+	bullet_target.inflict_damage(_damage)
 
+func get_cost() -> int:
+	return _cost

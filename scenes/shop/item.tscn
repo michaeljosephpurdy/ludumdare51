@@ -15,53 +15,8 @@ script = ExtResource("1_8bapb")
 metadata/_edit_vertical_guides_ = [-322.0]
 metadata/_edit_horizontal_guides_ = [21.0, 142.0]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 170.0
-offset_top = 40.0
-offset_right = 270.0
-offset_bottom = 130.0
-theme = ExtResource("2_dhomw")
-theme_override_constants/separation = 17
-
-[node name="CostLabel" type="Label" parent="VBoxContainer"]
-offset_right = 100.0
-offset_bottom = 31.0
-theme = ExtResource("2_dhomw")
-theme_override_font_sizes/font_size = 20
-text = "cost: 0"
-
-[node name="DamageLabel" type="Label" parent="VBoxContainer"]
-offset_top = 48.0
-offset_right = 100.0
-offset_bottom = 79.0
-theme = ExtResource("2_dhomw")
-theme_override_font_sizes/font_size = 20
-text = "damage: 0"
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-offset_left = 360.0
-offset_top = 40.0
-offset_right = 460.0
-offset_bottom = 130.0
-theme = ExtResource("2_dhomw")
-theme_override_constants/separation = 17
-
-[node name="RadiusLabel" type="Label" parent="VBoxContainer2"]
-offset_right = 100.0
-offset_bottom = 31.0
-theme = ExtResource("2_dhomw")
-theme_override_font_sizes/font_size = 20
-text = "radius: 0"
-
-[node name="FireRateLabel" type="Label" parent="VBoxContainer2"]
-offset_top = 48.0
-offset_right = 100.0
-offset_bottom = 79.0
-theme = ExtResource("2_dhomw")
-theme_override_font_sizes/font_size = 20
-text = "speed: 0"
-
 [node name="BuyButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 603.0
 offset_top = 10.0
 offset_right = 711.0
@@ -74,5 +29,73 @@ text = "BUY"
 z_index = -1
 texture = ExtResource("3_1rj3u")
 centered = false
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 33.0
+offset_right = 572.0
+offset_bottom = 134.0
+theme_override_constants/h_separation = 65
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HFlowContainer"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 101.0
+theme = ExtResource("2_dhomw")
+theme_override_constants/separation = 4
+
+[node name="RadiusLabel" type="Label" parent="HFlowContainer/VBoxContainer"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 31.0
+theme = ExtResource("2_dhomw")
+theme_override_font_sizes/font_size = 20
+text = "radius: 0"
+
+[node name="DamageLabel" type="Label" parent="HFlowContainer/VBoxContainer"]
+layout_mode = 2
+offset_top = 35.0
+offset_right = 100.0
+offset_bottom = 66.0
+theme = ExtResource("2_dhomw")
+theme_override_font_sizes/font_size = 20
+text = "damage: 0"
+
+[node name="FireRateLabel" type="Label" parent="HFlowContainer/VBoxContainer"]
+layout_mode = 2
+offset_top = 70.0
+offset_right = 100.0
+offset_bottom = 101.0
+theme = ExtResource("2_dhomw")
+theme_override_font_sizes/font_size = 20
+text = "speed: 0"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HFlowContainer"]
+layout_mode = 2
+offset_left = 165.0
+offset_right = 227.0
+offset_bottom = 101.0
+theme = ExtResource("2_dhomw")
+theme_override_constants/separation = 4
+
+[node name="CostLabel" type="Label" parent="HFlowContainer/VBoxContainer2"]
+layout_mode = 2
+offset_right = 62.0
+offset_bottom = 31.0
+theme = ExtResource("2_dhomw")
+theme_override_font_sizes/font_size = 20
+text = "cost: 0"
+
+[node name="EffectLabel" type="Label" parent="HFlowContainer/VBoxContainer2"]
+visible = false
+layout_mode = 2
+offset_top = 35.0
+offset_right = 116.0
+offset_bottom = 66.0
+theme = ExtResource("2_dhomw")
+theme_override_font_sizes/font_size = 20
+text = "effect: none
+"
 
 [connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]

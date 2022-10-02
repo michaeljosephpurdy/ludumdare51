@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxstp1t33rfon"]
+[gd_scene load_steps=7 format=3 uid="uid://cxstp1t33rfon"]
 
 [ext_resource type="Script" path="res://scenes/shop/shop-scene.gd" id="1_jgcw8"]
 [ext_resource type="Theme" uid="uid://bkd5mi3gx2dp0" path="res://theme.tres" id="2_sn0yy"]
 [ext_resource type="PackedScene" uid="uid://cpo7y46lje1bp" path="res://scenes/shop/item.tscn" id="3_atn5v"]
-[ext_resource type="PackedScene" uid="uid://c082gp8mtdcot" path="res://actors/turrets/basic-turret.tscn" id="3_qw7ro"]
+[ext_resource type="PackedScene" uid="uid://kdu4tvkpvqwc" path="res://actors/turrets/sauce-turret.tscn" id="4_g31vg"]
+[ext_resource type="PackedScene" uid="uid://bskiamoksfllu" path="res://actors/turrets/pepperoni-turret.tscn" id="4_viimx"]
+[ext_resource type="PackedScene" uid="uid://c5mml5nmwxnkp" path="res://actors/turrets/dough-turret.tscn" id="5_aondx"]
 
 [node name="ShopScene" type="Node2D"]
 position = Vector2(1, 75)
@@ -47,8 +49,7 @@ anchor_bottom = 0.0
 offset_right = 720.0
 offset_bottom = 160.0
 
-[node name="BasicTurret" parent="Items/Item" instance=ExtResource("3_qw7ro")]
-position = Vector2(82, 79)
+[node name="PepperoniTurret" parent="Items/Item" instance=ExtResource("4_viimx")]
 
 [node name="Item2" parent="Items" instance=ExtResource("3_atn5v")]
 anchors_preset = 0
@@ -58,8 +59,7 @@ offset_top = 164.0
 offset_right = 720.0
 offset_bottom = 324.0
 
-[node name="BasicTurret" parent="Items/Item2" instance=ExtResource("3_qw7ro")]
-position = Vector2(82, 79)
+[node name="SauceTurret" parent="Items/Item2" instance=ExtResource("4_g31vg")]
 
 [node name="Item3" parent="Items" instance=ExtResource("3_atn5v")]
 anchors_preset = 0
@@ -69,8 +69,7 @@ offset_top = 328.0
 offset_right = 720.0
 offset_bottom = 488.0
 
-[node name="BasicTurret" parent="Items/Item3" instance=ExtResource("3_qw7ro")]
-position = Vector2(82, 79)
+[node name="DoughTurret" parent="Items/Item3" instance=ExtResource("5_aondx")]
 
 [connection signal="purchased" from="Items/Item" to="." method="_on_item_purchased"]
 [connection signal="purchased" from="Items/Item2" to="." method="_on_item_purchased"]

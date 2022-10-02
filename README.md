@@ -67,6 +67,7 @@ The gameplay loops are:
 ## CURRENT
 
 * [build] turret placement less janky
+* [td] make dough and sauce turrets
 
 ## DONE
 

@@ -23,8 +23,11 @@ func _on_input_input_submitted(answer: int) -> void:
 
 func lock() -> void:
 	$Input.lock()
+	set_process_input(false)
 
 
 func unlock() -> void:
 	$Input.unlock()
+
+	set_process_input(true)
 

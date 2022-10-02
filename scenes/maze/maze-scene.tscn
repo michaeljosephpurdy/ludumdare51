@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://csf6wuxsxl7d3"]
+[gd_scene load_steps=7 format=3 uid="uid://bhq73jujjs6wu"]
 
-[ext_resource type="PackedScene" uid="uid://c082gp8mtdcot" path="res://actors/turrets/basic-turret.tscn" id="1_cu03f"]
+[ext_resource type="PackedScene" uid="uid://bskiamoksfllu" path="res://actors/turrets/pepperoni-turret.tscn" id="1_cu03f"]
 [ext_resource type="Script" path="res://scenes/maze/maze-scene.gd" id="1_of4p7"]
 [ext_resource type="Texture2D" uid="uid://cqoltod2agmoa" path="res://scenes/maze/background.png" id="3_0kmgw"]
+[ext_resource type="PackedScene" uid="uid://c5mml5nmwxnkp" path="res://actors/turrets/dough-turret.tscn" id="4_i5if2"]
+[ext_resource type="PackedScene" uid="uid://kdu4tvkpvqwc" path="res://actors/turrets/sauce-turret.tscn" id="5_galdn"]
 
 [sub_resource type="Curve2D" id="Curve2D_ubkud"]
 _data = {
@@ -13,12 +15,6 @@ point_count = 9
 [node name="DefendScene" type="Node2D"]
 script = ExtResource("1_of4p7")
 
-[node name="BasicTurret" parent="." instance=ExtResource("1_cu03f")]
-position = Vector2(200, 758)
-
-[node name="BasicTurret2" parent="." instance=ExtResource("1_cu03f")]
-position = Vector2(578, 192)
-
 [node name="EnemyPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_ubkud")
 
@@ -26,3 +22,12 @@ curve = SubResource("Curve2D_ubkud")
 z_index = -10
 texture = ExtResource("3_0kmgw")
 centered = false
+
+[node name="PepperoniTurret" parent="." instance=ExtResource("1_cu03f")]
+position = Vector2(217, 810)
+
+[node name="DoughTurret" parent="." instance=ExtResource("4_i5if2")]
+position = Vector2(417, 391)
+
+[node name="SauceTurret" parent="." instance=ExtResource("5_galdn")]
+position = Vector2(574, 169)

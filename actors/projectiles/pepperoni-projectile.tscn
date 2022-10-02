@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6a7fu02j8ght"]
+
+[ext_resource type="PackedScene" uid="uid://be7kjod14wqa3" path="res://actors/projectiles/base-projectile.tscn" id="1_l7vrl"]
+[ext_resource type="Texture2D" uid="uid://3v7huatt0nf0" path="res://actors/projectiles/pepperoni.png" id="2_tjbrn"]
+
+[node name="PepperoniProjectile" instance=ExtResource("1_l7vrl")]
+texture = ExtResource("2_tjbrn")

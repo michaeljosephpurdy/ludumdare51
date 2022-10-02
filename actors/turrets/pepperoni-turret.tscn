@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bskiamoksfllu"]
+
+[ext_resource type="PackedScene" uid="uid://cbjkcej2pms7o" path="res://actors/turrets/base-turret.tscn" id="1_clia2"]
+[ext_resource type="Texture2D" uid="uid://byrmpwk3qgxao" path="res://actors/turrets/pepperoni-turret.png" id="2_xeiy8"]
+[ext_resource type="PackedScene" uid="uid://c6a7fu02j8ght" path="res://actors/projectiles/pepperoni-projectile.tscn" id="3_dixap"]
+
+[node name="PepperoniTurret" node_paths=PackedStringArray("projectile") instance=ExtResource("1_clia2")]
+texture = ExtResource("2_xeiy8")
+projectile = NodePath("PepperoniProjectile")
+
+[node name="PepperoniProjectile" parent="." index="3" instance=ExtResource("3_dixap")]

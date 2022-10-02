@@ -8,7 +8,7 @@ var _enemy_count = 0
 
 func _ready() -> void:
 	unlock()
-	_turrets.push_back($BasicTurret)
+	_turrets.push_back($PepperoniTurret)
 	pass
 
 

@@ -1,5 +1,12 @@
 extends Node
 
+enum TurretType {
+	Pepperoni, Sauce, Dough
+}
+
+enum ProjectileType {
+	Pepperoni, Sauce, Dough
+}
 
 enum State {
 	MATH_FACT,

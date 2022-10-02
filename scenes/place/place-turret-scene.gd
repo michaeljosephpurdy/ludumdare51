@@ -7,13 +7,6 @@ const _valid_positions: Array[Vector2] = [
 ]
 
 func _ready() -> void:
-	Global.add_purchased_item(load('res://actors/turrets/basic-turret.tscn').instantiate())
-	Global.add_purchased_item(load('res://actors/turrets/basic-turret.tscn').instantiate())
-	Global.add_purchased_item(load('res://actors/turrets/basic-turret.tscn').instantiate())
-	Global.add_purchased_item(load('res://actors/turrets/basic-turret.tscn').instantiate())
-	Global.add_purchased_item(load('res://actors/turrets/basic-turret.tscn').instantiate())
-	Global.add_purchased_item(load('res://actors/turrets/basic-turret.tscn').instantiate())
-	unlock()
 	pass
 
 
@@ -22,9 +15,11 @@ func _process(delta: float) -> void:
 
 
 func lock() -> void:
+	set_process_input(false)
 	pass
 
 func unlock() -> void:
+	set_process_input(true)
 	var turrets = Global.get_unplaced_items()
 	for i in range(turrets.size()):
 		var turret = turrets[i]
