@@ -1,8 +1,8 @@
 # LD 51
 
-[link](https://ldjam.com/events/ludum-dare/51)
+[ldjam.com](https://ldjam.com/events/ludum-dare/51)
 
-Every 10 Seconds
+**Theme: Every 10 Seconds**
 
 ## Background
 
@@ -61,6 +61,7 @@ The gameplay loops are:
 * [juice] make enemies flash white when hit
 * [asset] gameplay loop music
 * [asset] pizza shop sprite
+* lots and lots of unknown tasks
 
 
 ## CURRENT
