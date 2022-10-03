@@ -19,7 +19,9 @@ enum State {
 }
 
 var TIME: float = 10.0
+var ZOMBIES: int = 100
 
+var _zombies_killed: int
 var _coin_count: int
 var _debug: bool = true
 var _current_state: State = State.DEFEND
@@ -72,3 +74,11 @@ func get_previous_state() -> int:
 func set_next_state(state: State) -> void:
 	_previous_state = _current_state
 	_current_state = state
+
+
+func zombie_killed() -> void:
+	_zombies_killed += 1
+
+func zombies_left() -> int:
+	return ZOMBIES - _zombies_killed
+

@@ -31,12 +31,11 @@ func _process(delta: float) -> void:
 	$InputContainer/Current.set_text(inputString)
 
 
-func _input(ev) -> void:
+func _input(ev: InputEvent) -> void:
 	if not ev is InputEventKey or not KEY_VALUE_MAP.has(ev.keycode):
 		return
 	if ev.echo or not ev.pressed:
 		return
-	print(ev)
 	if ev.keycode == KEY_ENTER:
 		return _on_submit_pressed()
 	if ev.keycode == KEY_BACKSPACE:
@@ -75,6 +74,8 @@ func _on_clear_pressed() -> void:
 
 func lock() -> void:
 	locked = true
+	set_process_input(false)
 	
 func unlock() -> void:
 	locked = false
+	set_process_input(true)

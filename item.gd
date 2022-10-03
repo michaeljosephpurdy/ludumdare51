@@ -12,33 +12,38 @@ func _ready() -> void:
 			_item = child
 	_item.position += _item_offset
 	_cost = _item.get_cost()
+	var name: String
 	var damage: String
 	var radius: String
 	var fire_rate: String
 	var effect: String = ''
 	match _item.type:
 		Global.TurretType.Sauce:
+			name = 'Sauce Spiller'
 			damage = 'normal'
 			radius = 'high'
 			fire_rate = 'normal'
 		Global.TurretType.Pepperoni:
+			name = 'Pepperoni Blaster'
 			damage = 'low'
 			radius = 'low'
 			fire_rate = 'low'
 			effect = 'slow down'
 		Global.TurretType.Dough:
+			name = 'Dough Launcher'
 			damage = 'high'
 			radius = 'normal'
 			fire_rate = 'slow'
 		_:
 			assert(false, 'unimplemented turret type')
+	$HFlowContainer/VBoxContainer/NameLabel.text = 'name: ' + name
 	$HFlowContainer/VBoxContainer/DamageLabel.text = 'damage: ' + damage
-	$HFlowContainer/VBoxContainer/RadiusLabel.text = 'range: ' + radius
-	$HFlowContainer/VBoxContainer/FireRateLabel.text = 'fire rate: ' + fire_rate
+	$HFlowContainer/VBoxContainer2/RadiusLabel.text = 'range: ' + radius
+	$HFlowContainer/VBoxContainer2/FireRateLabel.text = 'fire rate: ' + fire_rate
 	if (effect != ''):
 		$HFlowContainer/VBoxContainer2/EffectLabel.visible = true
 		$HFlowContainer/VBoxContainer2/EffectLabel.text = 'effects:\n' + effect
-	$HFlowContainer/VBoxContainer2/CostLabel.text = 'cost: ' + str(_cost)
+	$HFlowContainer/VBoxContainer/CostLabel.text = 'cost: ' + str(_cost)
 
 
 func _process(delta: float) -> void:

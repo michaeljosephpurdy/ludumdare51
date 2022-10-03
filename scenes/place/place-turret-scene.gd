@@ -24,7 +24,7 @@ func unlock() -> void:
 	for i in range(turrets.size()):
 		var turret = turrets[i]
 		var placeable = Placeable.new()
-		placeable.add_child(turret)
+		placeable.add_child(turret.duplicate())
 		placeable.set_process_input(true)
 		placeable.input_pickable = true
 		add_child(placeable)

@@ -1,0 +1,136 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjtuubjfqxco8"]
+
+[ext_resource type="Script" path="res://scenes/title/title-scene.gd" id="1_igs2e"]
+[ext_resource type="Texture2D" uid="uid://dbdj2f5qgwom3" path="res://scenes/title/title.png" id="2_g00e1"]
+[ext_resource type="Theme" uid="uid://bkd5mi3gx2dp0" path="res://theme.tres" id="3_3kntp"]
+[ext_resource type="AudioStream" uid="uid://b0js6xqk4hqn1" path="res://scenes/title/output.wav" id="4_w21j7"]
+
+[sub_resource type="Animation" id="Animation_hocjg"]
+resource_name = "intro"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ClosedCaptionsBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 21.5, 25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ClosedCaptionsBackground/ClosedCaptions:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4.8, 8.7, 12.7, 16, 19, 19.5, 20, 20.5, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "Our story starts, at the best pizza place around:", "Purdy's Pizza Palace", "Where they present perfectly prepared pizza pies", "plump personal pan pizzas", "plus plentiful pepperoni pizza per patron", "That is", "That is.", "That is..", "That is...", "Until 100 zombies showed up."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.8, 7.2, 8.7, 22.5, 24.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1135, 0), Vector2(-1950, -438.769), Vector2(-2199, -713), Vector2(-998.903, -259.4), Vector2(-347, -13.0001)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4.8, 7.2, 22.5, 24.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(0.8, 0.8), Vector2(1.2, 1.2), Vector2(0.663073, 0.663073), Vector2(0.4, 0.4)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SkipButton:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(5, 25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(29.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_skip_button_pressed"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ve8gd"]
+_data = {
+"intro": SubResource("Animation_hocjg")
+}
+
+[node name="TitleScene" type="Node2D"]
+script = ExtResource("1_igs2e")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(-1111.96, -302.13)
+scale = Vector2(0.708694, 0.708694)
+texture = ExtResource("2_g00e1")
+centered = false
+
+[node name="SkipButton" type="Button" parent="."]
+offset_left = 599.0
+offset_top = 18.0
+offset_right = 705.0
+offset_bottom = 95.0
+theme = ExtResource("3_3kntp")
+text = "skip
+"
+
+[node name="ClosedCaptionsBackground" type="ColorRect" parent="."]
+offset_left = 25.0
+offset_top = 941.0
+offset_right = 690.0
+offset_bottom = 1061.0
+color = Color(0.172549, 0.172549, 0.172549, 0.666667)
+
+[node name="ClosedCaptions" type="Label" parent="ClosedCaptionsBackground"]
+offset_right = 665.0
+offset_bottom = 120.0
+theme = ExtResource("3_3kntp")
+theme_override_font_sizes/font_size = 30
+text = "That is..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ve8gd")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_w21j7")
+
+[node name="Node" type="Node" parent="."]
+
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

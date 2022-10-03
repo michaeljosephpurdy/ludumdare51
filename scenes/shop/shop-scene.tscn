@@ -11,9 +11,17 @@
 position = Vector2(1, 75)
 script = ExtResource("1_jgcw8")
 
+[node name="CurrentZombieLabel" type="Label" parent="."]
+offset_top = 73.0
+offset_right = 109.0
+offset_bottom = 145.0
+theme = ExtResource("2_sn0yy")
+text = "Zombies killed: 0/100"
+
 [node name="CurrentCoinLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_top = 163.0
+offset_right = 109.0
+offset_bottom = 235.0
 theme = ExtResource("2_sn0yy")
 text = "Coin"
 
@@ -25,12 +33,14 @@ offset_right = 331.0
 offset_bottom = 298.0
 
 [node name="BasicTurretLabel" type="Label" parent="BasicTurretContainer"]
+layout_mode = 2
 offset_right = 120.0
 offset_bottom = 72.0
 theme = ExtResource("2_sn0yy")
 text = "Stats"
 
 [node name="BasicTurretButton" type="Button" parent="BasicTurretContainer"]
+layout_mode = 2
 offset_top = 76.0
 offset_right = 120.0
 offset_bottom = 153.0
@@ -38,11 +48,12 @@ theme = ExtResource("2_sn0yy")
 text = "Buy"
 
 [node name="Items" type="VBoxContainer" parent="."]
-offset_top = 108.0
+offset_top = 271.0
 offset_right = 720.0
-offset_bottom = 432.0
+offset_bottom = 759.0
 
 [node name="Item" parent="Items" instance=ExtResource("3_atn5v")]
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -52,6 +63,7 @@ offset_bottom = 160.0
 [node name="PepperoniTurret" parent="Items/Item" instance=ExtResource("4_viimx")]
 
 [node name="Item2" parent="Items" instance=ExtResource("3_atn5v")]
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -62,6 +74,7 @@ offset_bottom = 324.0
 [node name="SauceTurret" parent="Items/Item2" instance=ExtResource("4_g31vg")]
 
 [node name="Item3" parent="Items" instance=ExtResource("3_atn5v")]
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0

@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	$CurrentCoinLabel.text = 'Coins: ' + str(Global.get_coin())
-	pass
+	$CurrentZombieLabel.text = 'Zombies killed: ' + str(Global._zombies_killed) + '/' + str(Global.ZOMBIES)
 
 func lock():
 	set_process_input(false)
