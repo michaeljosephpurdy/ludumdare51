@@ -41,16 +41,17 @@ This will be a mashup between a math game and a tower defence game.
 
 The idea is you own a pizza shop.
 It's the best pizza shop around.
-There are zombies and other undead creatures trying to break in.
+There are zombies coming after your pizza.
 This is because they love pizza and haven't had it since they were alive.
-You must protect your pizza shop, so you place turrets throughout the town to stop them
+You must protect your pizza shop, so you place turrets throughout the town to stop them.
+You must withstand 100 zombies.
 
 There will be four main gameplay loops, each taking 10 seconds.
 The gameplay loops are:
 * solve as many math facts as you can
   * this is how you earn coins to buy turrets
 * buy turrets or upgrades
-* place turrets or make repairs to existing turrets
+* place turrets
 * withstand a wave of enemies
 
 ---
@@ -62,15 +63,15 @@ The gameplay loops are:
 * [asset] gameplay loop music
 * [asset] pizza shop sprite
 * lots and lots of unknown tasks
-* [td] set all turret positions from placement
 
 ## CURRENT
 
-* [build] turret placement less janky
 * [td] make dough and sauce turrets
 
 ## DONE
 
+* [td] set all turret positions from placement
+* [build] turret placement less janky
 * [build] able to place turrets
 * [shop] extendable Item which has Turret child
 * [shop] be able to buy turrets

@@ -3,7 +3,6 @@ extends Node2D
 signal finished
 
 func _ready() -> void:
-	$AnimationPlayer.play('intro')
 	pass
 
 
@@ -11,6 +10,7 @@ func _process(delta: float) -> void:
 	pass
 
 func unlock() -> void:
+	$AnimationPlayer.play('intro')
 	pass
 
 

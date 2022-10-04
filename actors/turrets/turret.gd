@@ -34,6 +34,7 @@ var texture: Texture2D
 @export
 var projectile: Node2D
 
+var _id: int
 var _fire_rate: float
 var _radius: int
 var _cost: int
@@ -41,8 +42,10 @@ var _damage: int
 var _immobile: bool
 var _target: Enemy
 var _type: Global.TurretType
+var _placed: bool
 
 func _ready() -> void:
+	_id = randi()
 	_type = type as Global.TurretType
 	var stats = _STATS_MAP[_type]
 	_fire_rate = stats.get('fire_rate')
@@ -112,3 +115,9 @@ func _on_bullet_hit(bullet_target: Enemy) -> void:
 
 func get_cost() -> int:
 	return _cost
+
+func mark_as_placed() -> void:
+	_placed = true
+
+func is_placed() -> bool:
+	return _placed

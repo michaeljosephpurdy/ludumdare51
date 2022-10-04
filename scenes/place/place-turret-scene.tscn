@@ -20,5 +20,7 @@ centered = false
 position = Vector2(189.75, 974)
 shape = SubResource("RectangleShape2D_h74h5")
 
+[connection signal="area_entered" from="ParkingLot" to="." method="_on_parking_lot_area_entered"]
+[connection signal="area_exited" from="ParkingLot" to="." method="_on_parking_lot_area_exited"]
 [connection signal="body_entered" from="ParkingLot" to="." method="_on_parking_lot_body_entered"]
 [connection signal="body_exited" from="ParkingLot" to="." method="_on_parking_lot_body_exited"]

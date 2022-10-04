@@ -22,10 +22,11 @@ var TIME: float = 10.0
 var ZOMBIES: int = 100
 
 var _zombies_killed: int
-var _coin_count: int
+var _coin_count: int = 200
 var _debug: bool = true
 var _current_state: State = State.DEFEND
 var _previous_state: State
+var _turrets: Array[Turret] =[]
 
 var _items_to_place: Array[Turret] = []
 
@@ -56,13 +57,19 @@ func deduct_cost(cost: int) -> void:
 	_coin_count = _coin_count- cost
 
 
-## Items
+## Turrets
 
 func add_purchased_item(item: Turret) -> void:
-	_items_to_place.push_back(item)
+	_turrets.push_back(item)
 
 func get_unplaced_items() -> Array[Turret]:
 	return _items_to_place
+
+func set_turrets(turrets: Array[Turret]) -> void:
+	_turrets = turrets
+
+func get_turrets() -> Array[Turret]:
+	return _turrets
 
 ## State
 func get_current_state() -> int:
@@ -75,6 +82,8 @@ func set_next_state(state: State) -> void:
 	_previous_state = _current_state
 	_current_state = state
 
+
+## Stats
 
 func zombie_killed() -> void:
 	_zombies_killed += 1
