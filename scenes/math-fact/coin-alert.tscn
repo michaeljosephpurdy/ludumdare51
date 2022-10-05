@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bagnskols53ao"]
+
+[ext_resource type="Texture2D" uid="uid://0cp1w14batvk" path="res://scenes/math-fact/coin.png" id="1_s47g6"]
+[ext_resource type="Script" path="res://scenes/math-fact/coin-alert.gd" id="2_al5gy"]
+[ext_resource type="AudioStream" uid="uid://b3divrj3s28mv" path="res://scenes/math-fact/pickupCoin.wav" id="2_v3ga8"]
+[ext_resource type="AnimationLibrary" uid="uid://d2qetg67g7uoi" path="res://scenes/math-fact/math-fact-alerts.res" id="4_1i4j3"]
+
+[node name="CoinAlert" type="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -36)
+texture = ExtResource("1_s47g6")
+script = ExtResource("2_al5gy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_v3ga8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"math-fact-alerts": ExtResource("4_1i4j3")
+}

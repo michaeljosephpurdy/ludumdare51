@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://c61yxbdkwbdnn"]
+
+[ext_resource type="Script" path="res://scenes/math-fact/wrong-answer-alert.gd" id="1_at24y"]
+[ext_resource type="Texture2D" uid="uid://d1tw78xfs5ut6" path="res://scenes/math-fact/ex.png" id="1_cten8"]
+[ext_resource type="AnimationLibrary" uid="uid://d2qetg67g7uoi" path="res://scenes/math-fact/math-fact-alerts.res" id="2_dtgh2"]
+[ext_resource type="AudioStream" uid="uid://7qwi4vphcxu5" path="res://scenes/math-fact/wrong-answer.wav" id="3_sjchf"]
+
+[node name="WrongAnswerAlert" type="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0)
+texture = ExtResource("1_cten8")
+script = ExtResource("1_at24y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sjchf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"math-fact-alerts": ExtResource("2_dtgh2")
+}

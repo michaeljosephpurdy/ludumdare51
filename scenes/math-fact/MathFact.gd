@@ -1,9 +1,8 @@
 extends Node2D
 
-var expected_answer: int
-var first_operand: int
-var second_operand: int
-const operator: String = '+'
+var _expected_answer: int
+var _first_operand: int
+var _second_operand: int
 
 
 func _ready() -> void:
@@ -15,12 +14,12 @@ func _process(delta: float) -> void:
 
 
 func new_fact() -> void:
-	first_operand = randi() % 10 
-	second_operand = randi() % 10 
-	$VBoxContainer/TopNumber.set_text(str(first_operand))
-	$VBoxContainer/BottomNumber.set_text('+ ' + str(second_operand))
-	expected_answer = first_operand + second_operand
+	_first_operand = randi() % 10 
+	_second_operand = randi() % 10 
+	$VBoxContainer/TopNumber.set_text(str(_first_operand))
+	$VBoxContainer/BottomNumber.set_text('+ ' + str(_second_operand))
+	_expected_answer = _first_operand + _second_operand
 
 
 func is_correct_answer(answer: int) -> bool:
-	return expected_answer == answer
+	return _expected_answer == answer

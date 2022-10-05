@@ -9,6 +9,11 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Sprite2D",
+"class": &"CoinAlert",
+"language": &"GDScript",
+"path": "res://scenes/math-fact/coin-alert.gd"
+}, {
 "base": "PathFollow2D",
 "class": &"Enemy",
 "language": &"GDScript",
@@ -28,12 +33,19 @@ _global_script_classes=[{
 "class": &"Turret",
 "language": &"GDScript",
 "path": "res://actors/turrets/turret.gd"
+}, {
+"base": "Node2D",
+"class": &"WrongAnswerAlert",
+"language": &"GDScript",
+"path": "res://scenes/math-fact/wrong-answer-alert.gd"
 }]
 _global_script_class_icons={
+"CoinAlert": "",
 "Enemy": "",
 "Placeable": "",
 "Projectile": "",
-"Turret": ""
+"Turret": "",
+"WrongAnswerAlert": ""
 }
 
 [application]
@@ -42,6 +54,7 @@ config/name="ldcompo"
 run/main_scene="res://main-scene.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Mobile")
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=250
 
 [autoload]
 

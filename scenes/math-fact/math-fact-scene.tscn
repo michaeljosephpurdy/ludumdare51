@@ -1,16 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4rscqcj174fc"]
+[gd_scene load_steps=5 format=3 uid="uid://c4rscqcj174fc"]
 
 [ext_resource type="Script" path="res://scenes/math-fact/math-fact-scene.gd" id="1_bxbhc"]
-[ext_resource type="PackedScene" path="res://scenes/math-fact/problem.tscn" id="1_k0iyq"]
+[ext_resource type="PackedScene" uid="uid://cwopkka15ntqt" path="res://scenes/math-fact/problem.tscn" id="1_k0iyq"]
+[ext_resource type="Theme" uid="uid://bkd5mi3gx2dp0" path="res://theme.tres" id="1_n1ece"]
 [ext_resource type="PackedScene" uid="uid://26u5sn70rvy5" path="res://scenes/math-fact/input/input.tscn" id="2_sxuls"]
 
-[node name="MathFactScene" type="Node2D"]
+[node name="MathFactScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_n1ece")
 script = ExtResource("1_bxbhc")
 
 [node name="MathFact" parent="." instance=ExtResource("1_k0iyq")]
-position = Vector2(0, 37)
+position = Vector2(260, 277)
 
 [node name="Input" parent="." instance=ExtResource("2_sxuls")]
-position = Vector2(0, 200)
+position = Vector2(260, 440)
+
+[node name="AlertPlacement" type="Node2D" parent="."]
+position = Vector2(470, 468)
 
 [connection signal="input_submitted" from="Input" to="." method="_on_input_input_submitted"]
